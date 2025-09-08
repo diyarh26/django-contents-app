@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>query</title>
+    {% load static %}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<H1 style="color: lightseagreen;text-align: center;">QUERY RESULTS</H1>
+ {% load static %}
+<table border="1" width="40%">
+ <th>Genre</th>
+ <th>Number Of Movies </th>
+ <th>Average Rating</th>
+ {% for data in results%}
+ <tr>
+ <td>{{ data.genre }}</td>
+ <td>{{ data.num }}</td>
+  <td>{{ data.avg_rating }}</td>
+ </tr>
+ {% endfor%}
+ </table>
+ <br><br><br><br>
+<table border="1" width="40%">
+ <th>Actor Name</th>
+ <th>Number Of Movies </th>
+ {% for data in results2%}
+ <tr>
+ <td>{{ data.aName }}</td>
+ <td>{{ data.totalMovies }}</td>
+ </tr>
+ {% endfor%}
+ </table>
+ <br><br><br><br>
+<table border="1" width="40%">
+ <th>Country</th>
+ <th>User ID </th>
+ {% for data in results3%}
+ <tr>
+ <td>{{ data.country }}</td>
+ <td>{{ data.uID }}</td>
+ </tr>
+ {% endfor%}
+ </table>
+<a href="/">Home</a>
+    <br>
+    <a href="/addactor/">Add Actor To Movie</a>
+    <br>
+    <a href="/feedback/">Movie Feedback</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 40%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: lightseagreen;
+    color: white;
+}
+
+a {
+    display: block;
+    margin: 10px 0;
+}

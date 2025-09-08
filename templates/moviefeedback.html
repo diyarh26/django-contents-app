@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+</head>
+<body>
+<H1 style="color: lightseagreen;text-align: center;">RATE THE MOVIE</H1>
+<form method ="POST">
+{% csrf_token %}
+<label for="options">Select a user:</label>
+<select name="options" id="options">
+    {% for user_id in user_ids %}
+        <option value="{{ user_id }}">{{ user_id }}</option>
+    {% endfor %}
+</select>
+<br><br>
+<label for="options2">Select a movie:</label>
+<select name="options2" id="options2">
+    {% for movie_title in movie_titles %}
+        <option value="{{ movie_title }}">{{ movie_title }}</option>
+    {% endfor %}
+</select>
+<br><br>
+<label for="birthday">Watching Date:</label>
+    <input type="date" id="date" name="date">
+<dl>
+    <label for="options">rating:</label>
+    <dd><input type="radio" name="rating" value="1">1
+    <dd><input type="radio" name="rating" value="2">2
+    <dd><input type="radio" name="rating" value="3">3
+    <dd><input type="radio" name="rating" value="4">4
+    <dd><input type="radio" name="rating" value="5">5
+</dl>
+<input type="submit">
+<br><br>
+ <div id="output-box">
+        {% if error_flag %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+    </div>
+<br><br>
+<a href="/">Home</a>
+    <br>
+    <a href="/query/">Query Results</a>
+    <br>
+    <a href="/addactor/">Add Actor To Movie</a>
+</form>
+</body>
+</html>

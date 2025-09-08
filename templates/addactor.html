@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Actor</title>
+</head>
+<body>
+<H1 style="color: lightseagreen;text-align: center;">ADD ACTOR TO MOVIE </H1>
+<form method ="POST">
+    {% csrf_token %}
+       <label for="actorName">Actor Name:</label>
+        <input type="text" id="actor" name="actor" required><br><br>
+
+        <label for="movieTitle">Movie Title:</label>
+        <input type="text" id=title" name="title" required><br><br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required><br><br>
+
+        <input type="submit" value="Submit">
+   {% if flag %}
+        <div id="message">
+            {% if flag == 1 %}
+                <p>NO such movie exists</p>
+            {% elif flag == 2 %}
+                <p>The actor already in the movie</p>
+            {% elif flag == 3 %}
+                <p>The asked salary is to much</p>
+            {% elif flag == 4 %}
+                <p>The actor was successfully added To the movie</p>
+            {% endif %}
+        </div>
+    {% endif %}
+ {% if flag == 4 %}
+  <h2>Last 5 Movies of the Actor</h2>
+    <table id="moviesTable" border="1">
+        <thead>
+            <tr>
+                <th>Movie Title</th>
+                 <th>Genre</th>
+                <th>Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie.title }}</td>
+                 <td>{{ movie.genre }}</td>
+                <td>{{ movie.releasedate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<br><br>
+<a href="/">Home</a>
+    <br>
+    <a href="/query/">Query Results</a>
+    <br>
+    <a href="/feedback/">Movie Feedback</a>
+</form>
+</body>
+</html>
