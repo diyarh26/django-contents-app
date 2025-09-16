@@ -10,7 +10,11 @@ It implements a content management system with movies, users, actors, and watchi
 - Movie feedback form (user ratings and watch logs)
 - Static files (CSS + image for homepage)
 
-<pre> ```text django-contents-app/ ├─ Contents_App/ # Django app (models, views, urls) ├─ templates/ # HTML templates ├─ static/ # CSS and image files ├─ view_queries.sql # SQL views for queries ``` </pre>
+django-contents-app/  
+├─ Contents_App/ # Django app (models, views, urls)   
+├─ templates/ # HTML templates   
+├─ static/ # CSS and image files  
+├─ view_queries.sql # SQL views for queries  
 
 ## Requirements
 - Python 3.10+
