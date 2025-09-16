@@ -16,3 +16,10 @@ django-contents-app/
 ├─ templates/ # HTML templates
 ├─ static/ # CSS and image files
 ├─ view_queries.sql # SQL views for queries
+
+## Requirements
+- Python 3.10+
+- Django 4.2+
+
+## SQL Views
+The file `view_queries.sql` contains the SQL views used in the application.
