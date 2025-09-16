@@ -1,5 +1,5 @@
 # Django Contents App
-
+![Homepage Screenshot](static/home_screen.jpg)
 This project is a Django web application built as part of a university course.  
 It implements a content management system with movies, users, actors, and watching history.
 
@@ -11,3 +11,8 @@ It implements a content management system with movies, users, actors, and watchi
 - Static files (CSS + image for homepage)
 
 ## Project Structure
+django-contents-app/
+├─ Contents_App/ # Django app (models, views, urls)
+├─ templates/ # HTML templates
+├─ static/ # CSS and image files
+├─ view_queries.sql # SQL views for queries
